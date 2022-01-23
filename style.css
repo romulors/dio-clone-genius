@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    background-image: linear-gradient(rgb(75,75,75), rgb(20,20,20));
+}
+
+/* Vamos definir um display flex para facilitar a centralização na tela, com o 
+justify (trabalha no horizontal) e o align-items (trabalha na vertical). Note
+que o height e o width estão com o tamanho de 100 do viewport (tamanho da janela)
+sendo que o vh significa o valor de height do viewport e o vw o do width */
+#main-game {
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Vamos colocar um grid para separar o genius em quatro secções, com cada area
+denominada como uma cor. Para fazer um fundo circular, vamos usar border-radius como 100% */
+#circulo {
+    display: grid;
+    grid-template-areas: "verde vermelho"
+    "amarelo azul";
+    gap: 10px;
+    border: 1px solid rgb(100, 100, 100);
+    background-color: rgb(150, 150, 150);
+    border-radius: 100%;
+    width: 500px;
+    height: 500px;
+    border-width: 10px;
+    box-shadow: inset 0 0 15px black;
+}
+
+/* As bordas de cada elemento possui 100% visto que o elemento representa um quadrante do grid */
+#blue {
+    grid-area: azul;
+    background-color: blue;
+    border-bottom-right-radius: 100%;
+    box-shadow: inset 0 0 10px black;
+}
+
+#red {
+    grid-area: vermelho;
+    background-color: red;
+    border-top-right-radius: 100%;
+    box-shadow: inset 0 0 10px black;
+}
+
+#yellow {
+    grid-area: amarelo;
+    background-color: yellow;
+    border-bottom-left-radius: 100%;
+    box-shadow: inset 0 0 10px black;
+}
+
+#green {
+    grid-area: verde;
+    background-color: green;
+    border-top-left-radius: 100%;
+    box-shadow: inset 0 0 10px black;
+}
+
+/* Um dos quatro cantos recebe a opacidade para indicar ao jogador que deve ser clicado */
+.selected {
+    opacity: 0.5;
+}
